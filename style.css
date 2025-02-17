@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    color: rgb(59, 59, 59);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+aside {
+    background-color: mediumseagreen;
+    height: 100vh;
+    padding: 15px;
+    box-shadow: 2px 0px 5px rgb(167, 167, 167);
+    z-index: 0;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3rem repeat(5, min-content);
+    gap: 10px;  
+}
+
+form h2 {
+    justify-self: center;
+    font-weight: 900;
+    font-size: 1.9rem;
+}
+
+form .form-control,
+form h2,
+form button {
+    grid-column: 1 / -1;
+}
+
+form .form-control:nth-last-child(2) {
+    grid-column: 1;
+    grid-row: -2;
+    max-width: 150px;
+}
+
+form .form-control:nth-last-child(3) {
+    grid-column: 2;
+    max-width: 150px;
+} 
+
+form .form-control {
+    display: flex;
+    flex-direction: column;
+}
+
+form .form-control > label {
+    font-weight: 600;
+}
+
+input,
+textarea,
+select {
+    font-size: 1rem;
+    font-family: inherit;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid rgb(183, 183, 183);
+    box-shadow: 1px 1px 4px rgb(50, 151, 95);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border: 2px solid rgb(140, 196, 255);
+}
+
+form button {
+    margin-top: 20px;
+    padding: 12px 16px;
+    justify-self: center;
+    width: 75%;
+    border-radius: 4px;
+    border: none;
+    background-color:rgb(240, 240, 240);
+    font-weight: 600;
+    font-size: inherit;
+    color: inherit;
+    box-shadow: 1px 1px 4px rgb(191, 191, 191);
+}
+
+form button:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+button:active {
+    opacity: 0.7;
+}
+
+/* --------------------------------------------------- */
+
+section {
+    background-color: rgb(243, 246, 254);
+    padding: 30px;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+    grid-auto-rows: max-content;
+    gap: 20px;
+}
+
+.card {
+    background-color: rgb(240, 240, 240);
+    padding: 10px 16px;
+    border-top: 5px solid mediumseagreen;
+    box-shadow: 2px 4px 5px lightblue;
+    border-radius: 6px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.3rem;
+    grid-template-rows: min-content min-content 1fr min-content;
+    grid-template-areas: "title title delete"
+                         "author genre genre"
+                         "desc desc desc"
+                         "release read pages";
+    gap: 5px;
+}
+
+section button {
+    grid-area: read;
+    justify-self: start;
+    width: min-content;
+    height: min-content;
+    padding: 2px 6px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    font-weight: 600;
+    background-color: #ffcb6b;
+}
+
+section button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.read-read {
+    background-color: mediumseagreen;
+}
+
+.read-read:hover {
+    opacity: 1;
+    cursor: default;
+}
+
+.card span {
+    grid-area: delete;
+    font-size: 1.3rem;
+}
+
+.card span:hover {
+    opacity: 0.8;
+}
+
+.title {
+    grid-area: title;
+    justify-self: center;
+    font-weight: 900;
+    font-size: 1.3rem;
+}
+
+.author {
+    grid-area: author;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.genre {
+    grid-area: genre;
+    justify-self: end;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.desc {
+    grid-area: desc;
+    padding: 5px 0;
+}
+
+.pages {
+    grid-area: pages;
+    font-weight: 600;
+    font-size: 0.9rem;
+    justify-self: end;
+}
+
+.released {
+    grid-area: release;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
